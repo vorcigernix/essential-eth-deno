@@ -1,14 +1,13 @@
-# 🦕 deno-module-starter
+# 🦕 essential-eth-deno
 
-[Deno](https://deno.land) module starter repository.
+[Deno](https://deno.land) version of Essential Eth (https://eeth.dev/). Barely working, not exporting gunctions from mod.ts for now.
 
 ## Usage
 
-```typescript
-import { getHelloWorld } from "https://raw.githubusercontent.com/BrunnerLivio/deno-module-starter/{VERSION}/mod.ts";
+Install deno and
 
-const helloWorld = getHelloWorld();
-console.log(helloWorld); // Prints "Hello World" in bold
+```
+deno run --allow-net mod.ts
 ```
 
 ## Test
@@ -27,5 +26,3 @@ deno fmt **/*.ts
 ## Resources
 
 - [Deno Website](https://deno.land)
-- [Deno Style Guide](https://deno.land/std/style_guide.md)
-- [Deno Gitter](https://gitter.im/denolife/Lobby)
