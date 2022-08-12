@@ -68,7 +68,7 @@ export class BaseContract {
                   ? options.gasLimit /* user passed in "gasLimit" directly */
                   : typeof jsonABIArgument?.gas ===
                     'number' /* ABI specified "gas". */
-                  ? estimateGas(data)
+                  ? estimateGas(await data)
                   : null;
               const req = async (): Promise<string> => {
                 return await post(

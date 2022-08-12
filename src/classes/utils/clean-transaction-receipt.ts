@@ -31,7 +31,7 @@ export function cleanTransactionReceipt(
   } as unknown as TransactionReceipt;
   (
     Object.keys(transactionReceipt) as Array<keyof RPCTransactionReceipt>
-  ).forEach((key) => {
+  ).forEach(async (key) => {
     if (!transactionReceipt[key]) return;
     switch (key) {
       case 'status':
@@ -41,7 +41,7 @@ export function cleanTransactionReceipt(
         break;
       case 'contractAddress':
         if (transactionReceipt[key]) {
-          cleanedTransactionReceipt[key] = toChecksumAddress(
+          cleanedTransactionReceipt[key] = await toChecksumAddress(
             transactionReceipt[key],
           );
         }

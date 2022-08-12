@@ -1,8 +1,8 @@
-import type { TinyBig } from './../shared/tiny-big/tiny-big';
+import type { TinyBig } from './../shared/tiny-big/tiny-big.ts';
 import type {
   BlockTransactionResponse,
   RPCTransaction,
-} from './Transaction.types';
+} from './Transaction.types.ts';
 
 type Modify<T, R> = Omit<T, keyof R> & R;
 

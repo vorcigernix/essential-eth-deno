@@ -1,4 +1,4 @@
-import type { JSONABI } from '../../..';
+import type { JSONABI } from '../../../types/Contract.types.ts';
 
 export const ensABI: JSONABI = [
   {

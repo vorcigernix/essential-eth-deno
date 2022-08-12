@@ -14,10 +14,10 @@ export function cleanLog(log: RPCLog, receiptLog: boolean): Log {
     ...log,
   } as unknown as Log;
 
-  (Object.keys(log) as Array<keyof RPCLog>).forEach((key) => {
+  (Object.keys(log) as Array<keyof RPCLog>).forEach(async (key) => {
     switch (key) {
       case 'address':
-        cleanedLog[key] = toChecksumAddress(log[key]);
+        cleanedLog[key] = await toChecksumAddress(log[key]);
         break;
       case 'blockNumber':
       case 'logIndex':

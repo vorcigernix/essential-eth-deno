@@ -1,4 +1,4 @@
-import type { JSONABI } from '../../../types/Contract.types';
+import type { JSONABI } from '../../../types/Contract.types.ts';
 
 export const abi: JSONABI =
   // 20210406000308

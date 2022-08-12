@@ -3,10 +3,10 @@ export const fakeUrls = {
 } as const;
 
 export const rpcUrls = {
-  mainnet: `${process.env.RPC_ORIGIN}/api/eth`,
-  matic: `${process.env.RPC_ORIGIN}/api/MATIC`,
-  gno: `${process.env.RPC_ORIGIN}/api/gno`,
-  bnb: `${process.env.RPC_ORIGIN}/api/bnb`,
-  arb1: `${process.env.RPC_ORIGIN}/api/arb1`,
-  gor: `${process.env.RPC_ORIGIN}/api/gor`,
+  mainnet: `https://free-eth-node.com/api/eth`,
+  matic: `https://free-eth-node.com/api/MATIC`,
+  gno: `https://free-eth-node.com/api/gno`,
+  bnb: `https://free-eth-node.com/api/bnb`,
+  arb1: `https://free-eth-node.com/api/arb1`,
+  gor: `https://free-eth-node.com/api/gor`,
 };

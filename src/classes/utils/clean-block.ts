@@ -128,7 +128,7 @@ export function cleanBlock(
   returnTransactionObjects: boolean,
 ): BlockResponse {
   const cleanedBlock = { ...block } as unknown as BlockResponse;
-  (Object.keys(block) as Array<keyof RPCBlock>).forEach((key) => {
+  (Object.keys(block) as Array<keyof RPCBlock>).forEach(async (key) => {
     // pending blocks have null instead of a difficulty
     // pending blocks have null instead of a miner address
     if (!block[key]) return;
@@ -146,7 +146,7 @@ export function cleanBlock(
         cleanedBlock[key] = Number(hexToDecimal(block[key]));
         break;
       case 'miner':
-        cleanedBlock[key] = toChecksumAddress(block[key]);
+        cleanedBlock[key] = await toChecksumAddress(block[key]);
         break;
     }
   });
