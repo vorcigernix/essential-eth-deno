@@ -3,7 +3,7 @@ import {
 	Contract as EthersContract,
 	providers,
 } from "https://cdn.ethers.io/lib/ethers-5.2.esm.min.js";
-import type { TinyBig } from "../../../shared/tiny-big/tiny-big.ts";
+import { TinyBig } from "../../../shared/tiny-big/tiny-big.ts";
 import { JsonRpcProvider } from "../../../providers/JsonRpcProvider.ts";
 import { rpcUrls } from "../../../providers/test/rpc-urls.ts";
 import { Contract as EssentialEthContract } from "../../Contract.ts";
@@ -41,10 +41,10 @@ Deno.test("crv contract test", async (t) => {
 				// @ts-ignore
 				ethersContract.balanceOf(address, {
 					gasLimit: 40955,
-				}) as TinyBig,
+				}) as Promise<TinyBig>,
 				essentialEthContract.balanceOf(address, {
 					gasLimit: 40955,
-				}) as TinyBig,
+				}) as Promise<TinyBig>,
 			]);
 			assertEquals(
 				ethersBalanceOf.toString(),

@@ -7,7 +7,7 @@ import { scientificStrToDecimalStr } from "./helpers.ts";
  * This is the return type of every operation on ether, wei, etc.
  */
 export class TinyBig extends Big {
-	constructor(value: string | number | TinyBig | Big) {
+	constructor(value: string | number | TinyBig | typeof Big) {
 		if (typeof value === "string" && value.startsWith("0x")) {
 			value = hexToDecimal(value);
 		}
@@ -99,6 +99,6 @@ export class TinyBig extends Big {
  * // 30
  * ```
  */
-export function tinyBig(value: string | number | TinyBig | Big): TinyBig {
+export function tinyBig(value: string | number | TinyBig |typeof Big): TinyBig {
 	return new TinyBig(value);
 }
